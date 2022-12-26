@@ -6,6 +6,8 @@ Recomenda um incentivador para o usuário baseado na área de projetos no qual d
 
 ## Funcionalidades disponíveis
 - Recomendação por área de projetos incentivados por cada incentivador disponível
+- Listar todos incentivadores disponíveis
+- Pesquisar um incentivador específico pelo id
 
 ## Construído com
 - Typescript
