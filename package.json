@@ -1,7 +1,7 @@
 {
-  "name": "webservice-template-2022-barreiradev",
+  "name": "recommender-service-2022",
   "version": "1.0.0",
-  "description": "Webservice template for nodejs projects - 2022",
+  "description": "recommender service - proof of concept - 2022",
   "main": "index.js",
   "scripts": {
     "build": "npx rimraf dist && tsc -p tsconfig-build.json",
