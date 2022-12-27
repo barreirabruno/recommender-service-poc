@@ -5,6 +5,13 @@ export type HttpResponse<T = any> = {
   data: T
 }
 
+export const ok = (data: any): HttpResponse => {
+  return {
+    statusCode: 200,
+    data
+  }
+}
+
 export const serverError = (error: Error): HttpResponse<Error> => ({
   statusCode: 500,
   data: new ServerError(error)
