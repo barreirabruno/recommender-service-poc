@@ -1,27 +1,16 @@
-import { TfIdf } from 'natural'
-import Vector from 'vector-object'
-
 import { DocumentToVectorTransformer } from '@/data/services/document-to-vector-transformer-service'
 import { RecommenderSponsorService } from '@/data/services/recommender-service'
 import { SimilarityCalculator } from '@/data/services/similarity-calculator-service'
+import { TfidCalculatorService } from '@/infra/natural/tfidf-calculator-service'
+import { VectorService } from '@/infra/vector-object/vector-service'
 
 type SutTypes = {
   recommenderService: RecommenderSponsorService
 }
 
-interface VectorServiceInterface {
-  create: (object: object) => any
-}
-
-class VectorService implements VectorServiceInterface {
-  create (object: object): any {
-    return new Vector(object)
-  }
-}
-
 const makeSut = (): SutTypes => {
   const vectorService = new VectorService()
-  const tfidfDependency = new TfIdf()
+  const tfidfDependency = new TfidCalculatorService()
   const documentToVector = new DocumentToVectorTransformer(tfidfDependency, vectorService)
   const similarityCalculator = new SimilarityCalculator()
   return {
