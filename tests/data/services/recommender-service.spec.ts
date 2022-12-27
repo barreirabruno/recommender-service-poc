@@ -22,7 +22,7 @@ const makeSut = (): SutTypes => {
 describe('recommender-service', () => {
   test('should return a list of sponsors based on a root sponsor', async () => {
     const { recommenderService } = makeSut()
-    const result = await recommenderService.perform({ id: 'b61ed613a8b87d8eb6749071abb0ab18dae201d0cd69f1b8e284c44b125a', trainedData: testData.sponsors_prepared })
+    const result = await recommenderService.perform({ id: 'b61ed613a8b87d8eb6749071abb0ab18dae201d0cd69f1b8e284c44b125a', trainedData: testData })
     expect(result).toHaveProperty('sponsor')
     expect(result).toHaveProperty('similarSponsors')
   })
