@@ -7,14 +7,14 @@ export class RecommenderSponsorService implements RecommenderSponsorInterface {
     private readonly calculateSimilarity: SimilarityCalculatorService) {}
 
   async perform (params: RecommenderSponsorNamespace.Input): Promise<RecommenderSponsorNamespace.Output> {
-    const docToVector = this.documentToVectorTransformer.perform({ processedDocument: [{ id: 'any_sponsor_id', content: 'any_sponsor_content' }] })
+    const docToVector = this.documentToVectorTransformer.perform({ processedDocument: params.trainedData })
     const similarityCalculator = this.calculateSimilarity.perform(docToVector)
 
     return {
       sponsor: {
-        ...params
+        id: params.id
       },
-      ...similarityCalculator
+      similarSponsors: similarityCalculator[params.id]
     }
   }
 }
