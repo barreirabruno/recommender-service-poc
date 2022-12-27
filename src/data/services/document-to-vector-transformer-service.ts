@@ -1,19 +1,7 @@
 import { DocumentToVectorTransformerInterface, DocumentToVectorTransformerNamespace } from '@/domain/features/document-to-vector'
 import { ProcessedSponsorDocument } from '@/domain/models/processed-document'
-
-interface TfIdfTerm {
-  term: string
-  tfidf: number
-}
-
-interface TfidCalculatorInterface {
-  addDocument: (document: string, key?: string, restoreCache?: boolean) => void
-  listTerms: (d: number) => TfIdfTerm[]
-}
-
-interface VectorServiceInterface {
-  create: (object: object) => any
-}
+import { TfidCalculatorInterface } from '../contracts/tfidf-calculator-service'
+import { VectorServiceInterface } from '../contracts/vector-service'
 
 export class DocumentToVectorTransformer implements DocumentToVectorTransformerInterface {
   constructor (
