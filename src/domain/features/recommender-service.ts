@@ -8,7 +8,6 @@ export namespace RecommenderSponsorNamespace {
   export type Output = {
     sponsor: {
       id: string
-      content: string
     }
     similarSponsors: ProcessedSponsorDocument[]
   }
