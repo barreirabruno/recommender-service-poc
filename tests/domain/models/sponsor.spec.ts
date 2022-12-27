@@ -10,14 +10,12 @@ const makeSut = (): SutTypes => {
   }
 }
 
-describe('domain', () => {
-  describe('models', () => {
-    test('should instanciate a Sponsor correctly', () => {
-      const { sponsor } = makeSut()
-      expect(sponsor).toEqual({
-        id: 'any_id',
-        content: 'any_content'
-      })
+describe('models', () => {
+  test('should instanciate a Sponsor correctly', () => {
+    const { sponsor } = makeSut()
+    expect(sponsor).toEqual({
+      id: 'any_id',
+      content: 'any_content'
     })
   })
 })
