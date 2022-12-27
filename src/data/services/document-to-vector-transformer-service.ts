@@ -23,7 +23,7 @@ export class DocumentToVectorTransformer implements DocumentToVectorTransformerI
       const items = this.tfidf.listTerms(i)
 
       for (let j = 0; j < items.length; j += 1) {
-        const item = items[i]
+        const item = items[j]
         obj[item.term] = item.tfidf
       }
 
