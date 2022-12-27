@@ -1,8 +1,8 @@
 import { RecommenderSponsorInterface, RecommenderSponsorNamespace } from '@/domain/features/recommender-service'
-import { Sponsor } from '@/domain/models/sponsor'
+import { ProcessedSponsorDocument } from '@/domain/models/processed-document'
 
 class DataToVectorTransformer {
-  perform (processedDocument: Sponsor[]): any {
+  perform (processedDocument: ProcessedSponsorDocument[]): any {
     return [
       {
         id: 'any_sponsor_idA',

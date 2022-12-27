@@ -1,4 +1,4 @@
-import { Sponsor } from '../models/sponsor'
+import { ProcessedSponsorDocument } from '../models/processed-document'
 
 export namespace RecommenderSponsorNamespace {
   export type Input = {
@@ -10,7 +10,7 @@ export namespace RecommenderSponsorNamespace {
       id: string
       content: string
     }
-    similarSponsors: Sponsor[]
+    similarSponsors: ProcessedSponsorDocument[]
   }
 }
 

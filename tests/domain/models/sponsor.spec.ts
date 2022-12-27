@@ -1,12 +1,12 @@
-import { Sponsor } from '../../../src/domain/models/sponsor'
+import { ProcessedSponsorDocument } from '../../../src/domain/models/processed-document'
 
 type SutTypes = {
-  sponsor: Sponsor
+  sponsor: ProcessedSponsorDocument
 }
 
 const makeSut = (): SutTypes => {
   return {
-    sponsor: new Sponsor({ id: 'any_id', content: 'any_content' })
+    sponsor: new ProcessedSponsorDocument({ id: 'any_id', content: 'any_content' })
   }
 }
 
