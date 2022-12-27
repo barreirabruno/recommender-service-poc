@@ -1,16 +1,4 @@
-
-export type HttpResponse<T = any> = {
-  statusCode: number
-  data: T
-}
-
-export abstract class Controller {
-  abstract perform (httpRequest: any): Promise<HttpResponse>
-
-  async handle (httpRequest: any): Promise<HttpResponse> {
-    return await this.perform(httpRequest)
-  }
-}
+import { Controller } from '@/application/controllers/controller'
 
 class ControllerStub extends Controller {
   result = {
