@@ -1,9 +1,13 @@
-import { HttpResponse } from '../helpers/http'
+import { HttpResponse, serverError } from '../helpers/http'
 
 export abstract class Controller {
   abstract perform (httpRequest: any): Promise<HttpResponse>
 
   async handle (httpRequest: any): Promise<HttpResponse> {
-    return await this.perform(httpRequest)
+    try {
+      return await this.perform(httpRequest)
+    } catch (error) {
+      return serverError(error as Error)
+    }
   }
 }
