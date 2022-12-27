@@ -1,36 +1,9 @@
 import { DocumentToVectorTransformer } from '@/data/services/document-to-vector-transformer-service'
 import { RecommenderSponsorService } from '@/data/services/recommender-service'
 import { SimilarityCalculatorService } from '@/data/services/similarity-calculator-service'
-import { RecommenderSponsorInterface } from '@/domain/features/recommender-service'
 import { TfidCalculatorService } from '@/infra/natural/tfidf-calculator-service'
 import { VectorService } from '@/infra/vector-object/vector-service'
-import { HttpResponse } from '../helpers/http'
-import { Controller } from '@/application/controllers/controller'
-import * as trainedData from '../../infra/_prepared_data/prepared_data_sponsor_salic.json'
-
-const ok = (data: any): HttpResponse => {
-  return {
-    statusCode: 200,
-    data
-  }
-}
-
-export class RecommenderController extends Controller {
-  constructor (
-    private readonly recommenderSponsorService: RecommenderSponsorInterface
-  ) {
-    super()
-  }
-
-  async perform (httpRequest: any): Promise<HttpResponse<any>> {
-    const recommendationParam = {
-      id: httpRequest.sponsor_id,
-      trainedData: trainedData
-    }
-    const sponsorRecommendation = await this.recommenderSponsorService.perform({ ...recommendationParam })
-    return ok(sponsorRecommendation)
-  }
-}
+import { RecommenderController } from '@/application/controllers/recommender-controller'
 
 describe('recommender-controller', () => {
   let vectorService: VectorService
