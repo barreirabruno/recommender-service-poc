@@ -14,6 +14,8 @@ Recomenda um incentivador para o usuário baseado na área de projetos no qual d
 - NodeJS
 - Jest
 - Express
+- natural
+- vector-object
 
 ## Setup do projeto
 
