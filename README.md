@@ -13,6 +13,7 @@ Recomenda um incentivador para o usuário baseado na área de projetos no qual d
 - Typescript
 - NodeJS
 - Jest
+- Express
 
 ## Setup do projeto
 
@@ -37,12 +38,15 @@ npm start
 npm run test
 ```
 
-### Run integration tests
+## Requisições e utilitários
 
-### Run project - without Docker
+Requisição curl - **Certifique-se de que o projeto está rodando na porta 3333 antes de fazer a requisição**:
 
-### Run project - with Docker
+```
+curl --location --request GET 'http://localhost:3333/sponsor/recommender?sponsor_id=ced027e7a89da9dff2034bb098a1bed6e1fbed1d8ed4e9724ccffa0395f1'
+```
 
-## Collections and utilities
+## Diagrama de design de código
 
-## Software design/architecture
+Mostra como o código foi pensado e executado para o serviço de recomendação:
+![alt text for screen readers](/docs/img/diagrams/code-design-diagram.png "Diagrama de design de código")
