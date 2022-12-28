@@ -1,7 +1,7 @@
 import { RecommenderSponsorInterface } from '@/domain/features/recommender-service'
 import { HttpResponse, ok } from '../helpers/http'
 import { Controller } from './controller'
-import * as trainedData from '@/tests/infra/_prepared_data/prepared_data_sponsor_salic.json'
+import * as trainedData from '@/infra/_prepared_data/prepared_data_sponsor_salic.json'
 
 export class RecommenderController extends Controller {
   constructor (
