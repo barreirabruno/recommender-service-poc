@@ -33,6 +33,10 @@ npm start
 
 ### Run unit tests
 
+```
+npm run test
+```
+
 ### Run integration tests
 
 ### Run project - without Docker
