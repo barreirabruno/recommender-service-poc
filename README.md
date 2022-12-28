@@ -14,7 +14,22 @@ Recomenda um incentivador para o usuário baseado na área de projetos no qual d
 - NodeJS
 - Jest
 
-## Setup project
+## Setup do projeto
+
+1. Instale as depedências do projeto
+```
+npm install
+```
+
+2. Faça o build do projeto
+```
+npm run build
+```
+
+3. Inicie o projeto
+```
+npm start
+```
 
 ### Run unit tests
 
