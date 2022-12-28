@@ -2,6 +2,7 @@ import { RecommenderSponsorInterface } from '@/domain/features/recommender-servi
 import { HttpResponse, ok } from '../helpers/http'
 import { Controller } from './controller'
 import * as trainedData from '@/infra/_prepared_data/prepared_data_sponsor_salic.json'
+import { infoLogger } from '@/infra/logger/logger'
 
 export class RecommenderController extends Controller {
   constructor (
@@ -11,6 +12,7 @@ export class RecommenderController extends Controller {
   }
 
   async perform (httpRequest: any): Promise<HttpResponse<any>> {
+    infoLogger('[RecommenderController][perform]')
     const recommendationParam = {
       id: httpRequest.sponsor_id,
       trainedData: trainedData

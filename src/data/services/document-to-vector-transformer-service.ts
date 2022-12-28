@@ -1,5 +1,6 @@
 import { DocumentToVectorTransformerInterface, DocumentToVectorTransformerNamespace } from '@/domain/features/document-to-vector'
 import { ProcessedSponsorDocument } from '@/domain/models/processed-document'
+import { infoLogger } from '@/infra/logger/logger'
 import { TfidCalculatorInterface } from '../contracts/tfidf-calculator-service'
 import { VectorServiceInterface } from '../contracts/vector-service'
 
@@ -10,6 +11,7 @@ export class DocumentToVectorTransformer implements DocumentToVectorTransformerI
   ) {}
 
   perform (params: DocumentToVectorTransformerNamespace.Input): any {
+    infoLogger('[DATA][DocumentToVectorTransformer][perform]')
     params.processedDocument.forEach((pd: ProcessedSponsorDocument) => {
       this.tfidf.addDocument(pd.content)
     })

@@ -1,4 +1,5 @@
 import { CosineSimilarityCalculatorInterface } from '@/domain/features/cosine-similarity-calculator-service'
+import { infoLogger } from '@/infra/logger/logger'
 
 export class SimilarityCalculatorService implements CosineSimilarityCalculatorInterface {
   MAX_SIMILAR = 5 // Número de resultados similares que quero retornar
@@ -6,6 +7,7 @@ export class SimilarityCalculatorService implements CosineSimilarityCalculatorIn
   MIN_SCORE = 0.2 // Mínimo de similaridade de coseno necessária que deve ser retornado
 
   perform (docVectors: any): any {
+    infoLogger('[DATA][SimilarityCalculatorService][perform]')
     const data: any = {}
 
     for (let i = 0; i < docVectors.length; i += 1) {
