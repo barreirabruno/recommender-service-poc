@@ -38,7 +38,7 @@ describe('ExpressRouter', () => {
   it('should call handle with correct request', async () => {
     await sut(req, res, next)
 
-    expect(controller.handle).toHaveBeenCalledWith({ any: 'any' })
+    expect(controller.handle).toHaveBeenCalledWith({ sponsor_id: undefined })
     expect(controller.handle).toHaveBeenCalledTimes(1)
   })
 
