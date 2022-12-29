@@ -4,5 +4,5 @@ import { makeSponsorByIdController } from '../factories/sponsor-by-id-controller
 
 export default (router: Router): void => {
   const sponsorByIdControllerr = makeSponsorByIdController()
-  router.get('/sponsor/', adaptExpressRoute(sponsorByIdControllerr))
+  router.get('/sponsor/single', adaptExpressRoute(sponsorByIdControllerr))
 }
