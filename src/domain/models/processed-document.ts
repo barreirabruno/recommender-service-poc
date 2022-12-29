@@ -1,4 +1,4 @@
-type ProcessedSponsorDocumentData = {
+export type ProcessedSponsorDocumentData = {
   id: string
   content: string
 }
