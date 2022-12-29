@@ -39,8 +39,6 @@ export default class AvailableSponsorService implements AvailableSponsorInterfac
       })
     })
 
-    console.log('[sponsorInfosArray]: ', sponsorInfosArray)
-
     return {
       availableSponsors: sponsorInfosArray
     }
