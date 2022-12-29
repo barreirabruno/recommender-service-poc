@@ -1,4 +1,4 @@
-import { HttpClientInterface, HttpClientRequest, HttpClientResponse } from '@/data/contracts/http-client'
+import { HttpClientInterface, HttpClientRequest, HttpClientResponse } from '@/data/contracts/http-client-service'
 import axios, { AxiosResponse } from 'axios'
 
 export default class HttpClientAxios implements HttpClientInterface {
