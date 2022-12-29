@@ -12,7 +12,7 @@ export default class SponsorByIdController extends Controller {
 
   async perform (httpRequest: any): Promise<HttpResponse<any>> {
     infoLogger('[AvailableSponsorController][perform]')
-    const sponsorByIdService = await this.sponsorbyIdService.perform({ id: httpRequest.id })
+    const sponsorByIdService = await this.sponsorbyIdService.perform({ id: httpRequest.sponsor_id })
     return ok(sponsorByIdService)
   }
 }
