@@ -1,11 +1,15 @@
+export type SponsorInfoSalic = {
+  nome: string
+  cgccpf: string
+  total_doado: number
+}
+
 export namespace AvailableSponsorNamespace {
   export type Input = {
     id: string
   }
   export type Output = {
-    nome: string
-    cgccpf: string
-    total_doado: number
+    availableSponsors: SponsorInfoSalic[]
   }
 }
 
