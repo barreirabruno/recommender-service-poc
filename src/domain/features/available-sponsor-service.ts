@@ -1,4 +1,7 @@
+import { ProcessedSponsorDocumentData } from '../models/processed-document'
+
 export type SponsorInfoSalic = {
+  idSalic: string
   nome: string
   cgccpf: string
   total_doado: number
@@ -6,7 +9,9 @@ export type SponsorInfoSalic = {
 
 export namespace AvailableSponsorNamespace {
   export type Input = {
-    id: string
+    preparedData: {
+      sponsors_prepared: ProcessedSponsorDocumentData[]
+    }
   }
   export type Output = {
     availableSponsors: SponsorInfoSalic[]
