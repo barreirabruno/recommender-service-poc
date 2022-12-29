@@ -1,5 +1,6 @@
 import { AvailableSponsorInterface, AvailableSponsorNamespace, SponsorInfoSalic } from '@/domain/features/available-sponsor-service'
 import HttpClientAxios from '@/infra/http/axios-http-client'
+import { infoLogger } from '@/infra/logger/logger'
 
 export default class AvailableSponsorService implements AvailableSponsorInterface {
   constructor (
@@ -7,6 +8,7 @@ export default class AvailableSponsorService implements AvailableSponsorInterfac
   ) {}
 
   async perform (params: AvailableSponsorNamespace.Input): Promise<AvailableSponsorNamespace.Output> {
+    infoLogger('[DATA][AvailableSponsorService][perform]')
     const salicRequests = params.preparedData.sponsors_prepared.map(sponsor => {
       return `http://api.salic.cultura.gov.br/v1/incentivadores/${sponsor.id}?format=json`
     }).map(async salicurl => {
