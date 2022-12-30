@@ -19,6 +19,7 @@ jobs:
       - name: === TEST COVERAGE ===
         run: npm run test:coverage
   deploy-production:
+      needs: [run-test]
       name: === DEPLOY APP PRODUCTION ===
       runs-on: ubuntu-latest
       steps:
