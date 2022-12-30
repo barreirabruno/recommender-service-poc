@@ -7,6 +7,7 @@ env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   run-test:
+    name: === UNIT TEST - RUN ===
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
