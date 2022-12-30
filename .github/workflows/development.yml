@@ -21,7 +21,7 @@ jobs:
         run: npm run test
   deploy-production:
       needs: [run-test]
-      name: === DEPLOY APP PRODUCTION ===
+      name: === DEPLOY APP DEVELOPMENT ===
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
