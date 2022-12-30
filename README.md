@@ -42,6 +42,22 @@ npm run test
 
 ## Requisições e utilitários
 
+**Incentivadores disponíveis:**<br/>
+Lista informações de incentivadores disponíveis na base de dados treinada para a recomendação. Os ids retornados são utilizados para consulta posterior no portal SALIC, com ele é possível obter mais informações sobre o incentivador.
+
+Requisição:
+```
+curl --location --request GET 'http://localhost:3334/sponsor'
+```
+
+**Incentivadores por id:**<br/>
+Dado um id de incentivador, busca informações no portal SALIC e retorna. Consulte a requisição de incentivadores disponíveis para ver um id de incentivador válido, caso um id de incentivador seja inválido, isto é, não existe nos dados treinados, a busca de incentivador por id não funcionará.
+
+Requisição:
+```
+curl --location --request GET 'http://localhost:3333/sponsor/single?sponsor_id=<ID_DE_INCENTIVADOR>'
+```
+
 **Recomendação de incentivador:**<br/>
 Dado um id de incentivador, retorna uma lista de incentivadores similares. Consulte a requisição de incentivadores disponíveis para ver um id de incentivador válido, caso um id de incentivador seja inválido, isto é, não existe nos dados treinados, a recomendação não funcionará.
 
