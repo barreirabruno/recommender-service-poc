@@ -20,7 +20,7 @@ jobs:
         run: npm run test:coverage
   deploy-production:
       needs: [run-test]
-      name: === DEPLOY APP DEVELOPMENT ===
+      name: === DEPLOY APP PRODUCTION ===
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
