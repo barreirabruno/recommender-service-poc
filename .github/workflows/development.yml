@@ -1,8 +1,9 @@
-name: production-recommender-service-pc-xp-educacao-projeto-final
+name: development-recommender-service-pc-xp-educacao-projeto-final
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - main
+      - develop
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
@@ -16,14 +17,14 @@ jobs:
           node-version: '14'
       - name: === INSTALL APP ===
         run: npm install
-      - name: === TEST COVERAGE ===
-        run: npm run test:coverage
+      - name: === UNIT TEST ===
+        run: npm run test
   deploy-production:
       needs: [run-test]
-      name: === DEPLOY APP DEVELOPMENT ===
+      name: === DEPLOY APP PRODUCTION ===
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
         - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy -a divine-sky-6511 --remote-only
+        - run: flyctl deploy -a fragrant-rain-4494 --remote-only
 
