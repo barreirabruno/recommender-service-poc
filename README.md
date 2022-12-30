@@ -42,10 +42,12 @@ npm run test
 
 ## Requisições e utilitários
 
-Requisição curl - **Certifique-se de que o projeto está rodando na porta 3333 antes de fazer a requisição**:
+**Recomendação de incentivador:**<br/>
+Dado um id de incentivador, retorna uma lista de incentivadores similares. Consulte a requisição de incentivadores disponíveis para ver um id de incentivador válido, caso um id de incentivador seja inválido, isto é, não existe nos dados treinados, a recomendação não funcionará.
 
+Requisição:
 ```
-curl --location --request GET 'http://localhost:3333/sponsor/recommender?sponsor_id=ced027e7a89da9dff2034bb098a1bed6e1fbed1d8ed4e9724ccffa0395f1'
+curl --location --request GET 'http://localhost:3333/sponsor/recommender?sponsor_id=<ID_DE_INCENTIVADOR>
 ```
 
 ## Diagrama de design de código
