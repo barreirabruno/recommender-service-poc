@@ -6,22 +6,49 @@ Recomenda um incentivador para o usuário baseado na área de projetos no qual d
 
 ## Funcionalidades disponíveis
 - Recomendação por área de projetos incentivados por cada incentivador disponível
+- Listar todos incentivadores disponíveis
+- Pesquisar um incentivador específico pelo id
 
 ## Construído com
 - Typescript
 - NodeJS
 - Jest
+- Express
+- natural
+- vector-object
 
-## Setup project
+## Setup do projeto
+
+1. Instale as depedências do projeto
+```
+npm install
+```
+
+2. Faça o build do projeto
+```
+npm run build
+```
+
+3. Inicie o projeto
+```
+npm start
+```
 
 ### Run unit tests
 
-### Run integration tests
+```
+npm run test
+```
 
-### Run project - without Docker
+## Requisições e utilitários
 
-### Run project - with Docker
+Requisição curl - **Certifique-se de que o projeto está rodando na porta 3333 antes de fazer a requisição**:
 
-## Collections and utilities
+```
+curl --location --request GET 'http://localhost:3333/sponsor/recommender?sponsor_id=ced027e7a89da9dff2034bb098a1bed6e1fbed1d8ed4e9724ccffa0395f1'
+```
 
-## Software design/architecture
+## Diagrama de design de código
+
+Mostra como o código foi pensado e executado para o serviço de recomendação:
+![alt text for screen readers](/docs/img/diagrams/code-design-diagram.png "Diagrama de design de código")
