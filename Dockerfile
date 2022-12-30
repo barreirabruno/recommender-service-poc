@@ -29,5 +29,5 @@ COPY --from=1 --chown=node:node /compile/dist /app/dist
 # copie dependencias de producao do passo 2
 COPY --from=2 --chown=node:node /build /app/dist
 USER node
-EXPOSE 3333
+EXPOSE 8080
 CMD [ "node", "dist/main/index.js" ]

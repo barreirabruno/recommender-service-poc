@@ -1,5 +1,5 @@
 require('dotenv/config')
 
 export const env = {
-  serverPort: process.env.PORT ?? 3333
+  serverPort: process.env.PORT ?? 8080
 }
