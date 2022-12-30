@@ -1,0 +1,30 @@
+name: development-recommender-service-pc-xp-educacao-projeto-final
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+jobs:
+  run-test:
+    name: === UNIT TEST - RUN ===
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: === INSTALL APP ===
+        run: npm install
+      - name: === UNIT TEST ===
+        run: npm run test
+  deploy-production:
+      needs: [run-test]
+      name: === DEPLOY APP PRODUCTION ===
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: flyctl deploy --remote-only --config ../../.fly-io/dev.toml
+
