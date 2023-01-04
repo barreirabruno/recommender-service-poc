@@ -42,12 +42,21 @@ npm run test
 
 ## Requisições e utilitários
 
+**Ambiente**
+
+Escolha um dos ambientes abaixo para realizar as requisições:
+
+Local* - http://localhost:3333
+*Certifique-se de que a aplicação está rodando na porta 3333
+
+Prd - https://divine-sky-6511.fly.dev
+
 **Incentivadores disponíveis:**<br/>
 Lista informações de incentivadores disponíveis na base de dados treinada para a recomendação. Os ids retornados são utilizados para consulta posterior no portal SALIC, com ele é possível obter mais informações sobre o incentivador.
 
 Requisição:
 ```
-curl --location --request GET 'http://localhost:3334/sponsor'
+curl --location --request GET '<AMBIENTE>/sponsor'
 ```
 
 **Incentivadores por id:**<br/>
@@ -55,7 +64,7 @@ Dado um id de incentivador, busca informações no portal SALIC e retorna. Consu
 
 Requisição:
 ```
-curl --location --request GET 'http://localhost:3333/sponsor/single?sponsor_id=<ID_DE_INCENTIVADOR>'
+curl --location --request GET '<AMBIENTE>/sponsor/single?sponsor_id=<ID_DE_INCENTIVADOR>'
 ```
 
 **Recomendação de incentivador:**<br/>
@@ -63,7 +72,7 @@ Dado um id de incentivador, retorna uma lista de incentivadores similares. Consu
 
 Requisição:
 ```
-curl --location --request GET 'http://localhost:3333/sponsor/recommender?sponsor_id=<ID_DE_INCENTIVADOR>
+curl --location --request GET '<AMBIENTE>/sponsor/recommender?sponsor_id=<ID_DE_INCENTIVADOR>
 ```
 
 ## Diagrama de design de código
